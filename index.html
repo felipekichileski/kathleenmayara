@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kathleen Mayara | Blackwork & Preto e Vermelho — Porto Velho</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23050505'/%3E%3Crect x='2' y='2' width='60' height='60' rx='14' fill='none' stroke='%23FF1E27' stroke-width='2.5' stroke-opacity='0.45'/%3E%3Ctext x='30' y='43' text-anchor='middle' font-family='Georgia, serif' font-weight='700' font-size='27' letter-spacing='-1' fill='%23FAFAFA'%3EKM%3Ctspan fill='%23FF1E27'%3E.%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-body: #050505;
+      --bg-card: #0E0E0E;
+      --bg-card-hover: #151515;
+      --bg-surface: #090909;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-red: rgba(255, 30, 39, 0.45);
+      
+      --red-vivid: #FF1E27;
+      --red-bright: #FF3B43;
+      --red-dark: #CC1119;
+      --red-glow: rgba(255, 30, 39, 0.25);
+      --red-tint: rgba(255, 30, 39, 0.09);
+      
+      --text-main: #FAFAFA;
+      --text-muted: #A3A3A3;
+      --text-dim: #737373;
+      
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ================= NAVBAR DESKTOP ================= */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(5, 5, 5, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-main);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+    }
+
+    .logo span {
+      color: var(--red-vivid);
+      text-shadow: 0 0 14px var(--red-glow);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.25rem;
+      list-style: none;
+    }
+
+    .nav-links button {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: color 0.2s;
+    }
+
+    .nav-links button:hover,
+    .nav-links button.active {
+      color: var(--text-main);
+    }
+
+    .nav-links button.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--red-vivid);
+      box-shadow: 0 0 10px var(--red-vivid);
+      border-radius: 2px;
+    }
+
+    /* ================= MENU INFERIOR MOBILE ================= */
+    .mobile-bottom-nav {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 60;
+      background: rgba(10, 10, 10, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border-subtle);
+      padding: 0.55rem 0.5rem calc(0.55rem + env(safe-area-inset-bottom));
+      justify-content: space-around;
+    }
+
+    .mobile-nav-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 0.35rem 1rem;
+      border-radius: 10px;
+      transition: all 0.2s;
+    }
+
+    .mobile-nav-btn.active {
+      color: var(--red-vivid);
+      background: var(--red-tint);
+    }
+
+    /* ================= BOTÕES ================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.8rem 1.45rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background-color: var(--red-vivid);
+      color: #FFFFFF;
+      box-shadow: 0 4px 24px rgba(255, 30, 39, 0.32);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--red-bright);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(255, 30, 39, 0.45);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      border-color: var(--border-subtle);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--red-vivid);
+      background-color: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    /* ================= LAYOUT & VIEWS ================= */
+    main {
+      flex: 1;
+      max-width: 1180px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2.75rem 1.5rem 5rem;
+    }
+
+    .view-section {
+      display: none;
+      animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .view-section.active {
+      display: block;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red-vivid);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--red-vivid);
+      box-shadow: 0 0 8px var(--red-vivid);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.85); }
+    }
+
+    .eyebrow-muted {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ================= HERO SECTION ================= */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 4.5rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+      line-height: 1.06;
+      margin: 0.85rem 0 0.45rem;
+      font-weight: 700;
+    }
+
+    .hero-title span {
+      color: var(--red-vivid);
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .hero-subtitle {
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-bio-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--red-vivid);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      color: #E5E5E5;
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+
+    .hero-bio-card strong {
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    /* Card Visual com a Foto da Artista */
+    .artist-showcase {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65);
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .artist-showcase:hover {
+      border-color: var(--border-red);
+      transform: translateY(-3px);
+    }
+
+    .artist-photo-wrapper {
+      position: relative;
+      width: 100%;
+      height: 360px;
+      background: #141414;
+      overflow: hidden;
+    }
+
+    .artist-photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .artist-showcase:hover .artist-photo-wrapper img {
+      transform: scale(1.03);
+    }
+
+    .artist-photo-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--bg-card) 2%, rgba(14, 14, 14, 0.25) 45%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .artist-photo-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 2;
+      background: rgba(5, 5, 5, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 30, 39, 0.45);
+      color: #FFFFFF;
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+
+    .showcase-footer {
+      padding: 1.25rem 1.75rem 1.75rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .showcase-footer h4 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0.35rem 0 0.45rem;
+    }
+
+    .showcase-footer p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ================= PILARES DE ATUAÇÃO ================= */
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 0.85rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-header-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .pillar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: all 0.25s ease;
+    }
+
+    .pillar-card:hover {
+      border-color: var(--border-red);
+      background: var(--bg-card-hover);
+      transform: translateY(-3px);
+    }
+
+    .pillar-number {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--red-vivid);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+
+    .pillar-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ================= BARRA DE ESTÚDIO ================= */
+    .studio-bar {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 4.5rem;
+    }
+
+    .studio-info {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .studio-icon {
+      color: var(--red-vivid);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .studio-info h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .studio-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .studio-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .badge-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 0.65rem 1.1rem;
+    }
+
+    .badge-box span {
+      display: block;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+    }
+
+    .badge-box strong {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* ================= PORTFÓLIO / GALERIA ================= */
+    .portfolio-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .portfolio-header h2 {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      line-height: 1.1;
+      margin-top: 0.35rem;
+    }
+
+    .portfolio-header h2 span {
+      color: var(--red-vivid);
+      font-style: italic;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      padding: 0.5rem 1.05rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--red-tint);
+      border-color: var(--red-vivid);
+      color: #FFFFFF;
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 4.5rem;
+    }
+
+    .work-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .work-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-red);
+    }
+
+    .work-image-box {
+      height: 330px;
+      background: #0A0A0A;
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .work-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+
+    .work-card:hover .work-image-box img {
+      transform: scale(1.04);
+    }
+
+    .work-tag-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      background: rgba(5, 5, 5, 0.85);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 30, 39, 0.35);
+      padding: 0.28rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .work-tag-badge.blackwork-tag {
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .work-body {
+      padding: 1.4rem;
+    }
+
+    .work-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .work-meta span:first-child {
+      color: var(--red-vivid);
+      font-weight: 600;
+    }
+
+    .work-meta span:last-child {
+      color: var(--text-dim);
+    }
+
+    .work-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .work-body p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* ================= MODAL DE DETALHE DA ARTE ================= */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(10px);
+      z-index: 90;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+      animation: fadeUp 0.25s ease;
+    }
+
+    .modal-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-red);
+      border-radius: 16px;
+      max-width: 500px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85);
+    }
+
+    .modal-header {
+      padding: 1.1rem 1.4rem;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.6rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .modal-close:hover {
+      color: var(--red-vivid);
+    }
+
+    .modal-photo {
+      width: 100%;
+      max-height: 430px;
+      object-fit: cover;
+      display: none;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .modal-content {
+      padding: 1.5rem;
+    }
+
+    .modal-content h3 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      margin: 0.2rem 0 0.65rem;
+    }
+
+    .modal-content p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ================= CTA BANNER ================= */
+    .cta-banner {
+      background: radial-gradient(circle at center, rgba(255, 30, 39, 0.18), transparent 70%), var(--bg-card);
+      border: 1px solid rgba(255, 30, 39, 0.32);
+      border-radius: 16px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+    }
+
+    .cta-banner h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      margin: 0.5rem 0 0.75rem;
+    }
+
+    .cta-banner h2 span {
+      color: var(--red-vivid);
+      font-style: italic;
+    }
+
+    .cta-banner p {
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      font-size: 0.95rem;
+    }
+
+    /* ================= CONTATO & LOCALIZAÇÃO ================= */
+    .contact-header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 1.5rem;
+    }
+
+    .contact-header h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      margin: 0.4rem 0;
+    }
+
+    .contact-header h1 span {
+      color: var(--red-vivid);
+      font-style: italic;
+    }
+
+    .contact-header p {
+      color: var(--text-muted);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .social-cards-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .direct-channel-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 1.85rem;
+      transition: all 0.25s ease;
+    }
+
+    .direct-channel-card:hover {
+      border-color: var(--border-red);
+      transform: translateY(-2px);
+    }
+
+    .direct-channel-card.whatsapp-featured {
+      background: linear-gradient(160deg, rgba(255, 30, 39, 0.12) 0%, var(--bg-card) 65%);
+      border-color: rgba(255, 30, 39, 0.35);
+    }
+
+    .channel-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .channel-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: var(--red-tint);
+      border: 1px solid rgba(255, 30, 39, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--red-vivid);
+    }
+
+    .direct-channel-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .direct-channel-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Card do Mapa & Geolocalização */
+    .map-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .map-card-header {
+      margin-bottom: 1.25rem;
+    }
+
+    .map-card-header h3 {
+      font-size: 1.25rem;
+      margin: 0.35rem 0 0.25rem;
+    }
+
+    .map-card-header p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .map-frame-wrapper {
+      width: 100%;
+      height: 270px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 1.25rem;
+      background: #0A0A0A;
+      position: relative;
+    }
+
+    .map-frame-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: invert(90%) hue-rotate(180deg) contrast(95%);
+    }
+
+    .geo-status {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      display: none;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--bg-surface);
+      padding: 0.6rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .geo-status.visible {
+      display: flex;
+    }
+
+    .map-buttons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .btn-geo-full {
+      grid-column: 1 / -1;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 2rem 1.5rem;
+      margin-top: auto;
+    }
+
+    .footer-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .footer-brand span {
+      color: var(--red-vivid);
+      font-style: italic;
+    }
+
+    .footer-sub {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      margin-top: 0.2rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    .footer-links a,
+    .footer-links button {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      text-decoration: none;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover,
+    .footer-links button:hover {
+      color: var(--red-vivid);
+    }
+
+    /* ================= RESPONSIVIDADE ================= */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .artist-photo-wrapper {
+        height: 400px;
+      }
+
+      .pillars-grid,
+      .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-bottom-nav {
+        display: flex;
+      }
+
+      main {
+        padding: 1.75rem 1.15rem 6.5rem;
+      }
+
+      footer {
+        padding-bottom: 5.5rem;
+      }
+
+      .artist-photo-wrapper {
+        height: 360px;
+      }
+
+      .pillars-grid,
+      .works-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .studio-bar {
+        padding: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR SUPERIOR -->
+  <header>
+    <div class="nav-container">
+      <a class="logo" onclick="switchTab('apresentacao')">KM<span>.</span></a>
+      
+      <ul class="nav-links">
+        <li><button class="nav-btn active" data-target="apresentacao" onclick="switchTab('apresentacao')">Apresentação</button></li>
+        <li><button class="nav-btn" data-target="trabalhos" onclick="switchTab('trabalhos')">Trabalhos</button></li>
+        <li><button class="nav-btn" data-target="contato" onclick="switchTab('contato')">Contato & Local</button></li>
+      </ul>
+
+      <a href="https://wa.me/5569993120331?text=Olá%20Kathleen!%20Vi%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sessão." target="_blank" class="btn btn-primary" style="padding: 0.6rem 1.15rem; font-size: 0.85rem;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- NAVEGAÇÃO INFERIOR PARA CELULAR -->
+  <nav class="mobile-bottom-nav" aria-label="Navegação mobile">
+    <button class="mobile-nav-btn active" data-target="apresentacao" onclick="switchTab('apresentacao')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      Início
+    </button>
+    <button class="mobile-nav-btn" data-target="trabalhos" onclick="switchTab('trabalhos')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+      Trabalhos
+    </button>
+    <button class="mobile-nav-btn" data-target="contato" onclick="switchTab('contato')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      Contato & Mapa
+    </button>
+  </nav>
+
+  <main>
+    <!-- ================= ABA 1: APRESENTAÇÃO ================= -->
+    <section id="apresentacao" class="view-section active">
+      
+      <!-- HERO -->
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            <span>AGENDA ABERTA</span>
+            <span class="eyebrow-muted">• PORTO VELHO, RO</span>
+          </div>
+          
+          <h1 class="hero-title">Kathleen <span>Mayara</span></h1>
+          <p class="hero-subtitle">Tatuadora & Artista Visual</p>
+          
+          <div class="hero-bio-card">
+            Especialista em <strong>blackwork de alto contraste</strong> e trabalhos em <strong>preto e vermelho</strong>. Desenvolvo desde artes autorais criadas do zero até desenhos prontos adaptados sob medida para acompanhar as linhas do seu corpo.
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="switchTab('trabalhos')">
+              Ver Trabalhos
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+            <button class="btn btn-secondary" onclick="switchTab('contato')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Contato & Localização
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD COM A FOTO DA ARTISTA -->
+        <div class="artist-showcase">
+          <div class="artist-photo-wrapper">
+            <span class="artist-photo-badge">Preto & Carmim</span>
+            <img src="kathleen.jpg.jpeg" onerror="this.onerror=null; this.src='kathleen.jpg';" alt="Kathleen Mayara — Tatuadora especialista em Blackwork e Preto e Vermelho">
+          </div>
+
+          <div class="showcase-footer">
+            <span class="eyebrow">ATENDIMENTO PERSONALIZADO</span>
+            <h4>Tatuadora Residente no Boto Ink</h4>
+            <p>Você pode trazer sua ideia para um projeto inédito ou escolher uma referência pronta — ajusto cada detalhe para encaixar com naturalidade na sua pele.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PILARES DE ATUAÇÃO -->
+      <div class="section-header">
+        <span class="section-header-title">Pilares do Trabalho</span>
+        <span class="eyebrow">03 / Fundamentos</span>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <span class="pillar-number">01</span>
+          <h3>+4 Anos de Trajetória</h3>
+          <p>Experiência focada em traço firme e composição limpa, explorando referências de gravura, botânica sombria e elementos anatômicos.</p>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-number">02</span>
+          <h3>Autorais & Artes Prontas</h3>
+          <p>Criação de desenhos exclusivos a partir da sua ideia ou adaptação cuidadosa de artes prontas para respeitar o movimento de cada parte do corpo.</p>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-number">03</span>
+          <h3>Blackwork & Vermelho</h3>
+          <p>Preto sólido de alto contraste, texturas em pontilhismo e detalhes em vermelho pensados para dar destaque e profundidade na pele.</p>
+        </div>
+      </div>
+
+      <!-- BARRA DE LOCALIZAÇÃO E BIOSSEGURANÇA -->
+      <div class="studio-bar">
+        <div class="studio-info">
+          <svg class="studio-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+          <div>
+            <h4>BOTO INK TATTOO STUDIO</h4>
+            <p>Av. Calama, 5922 – Aponiã, Porto Velho - RO</p>
+          </div>
+        </div>
+
+        <div class="studio-badges">
+          <div class="badge-box">
+            <span>Espaço</span>
+            <strong>Estruturado & Acolhedor</strong>
+          </div>
+          <div class="badge-box">
+            <span>Materiais</span>
+            <strong>100% Descartáveis</strong>
+          </div>
+          <div class="badge-box">
+            <span>Atendimento</span>
+            <strong>Com Hora Marcada</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRÉVIA DO PORTFÓLIO -->
+      <div class="portfolio-header">
+        <div>
+          <span class="eyebrow">SELEÇÃO RECENTE</span>
+          <h2>Obras em <span>Destaque</span></h2>
+        </div>
+        <button class="btn btn-secondary" onclick="switchTab('trabalhos')">
+          Ver Portfólio Completo →
+        </button>
+      </div>
+
+      <div class="works-grid">
+        <article class="work-card" onclick="openWorkModal('Sereia & Peônias', 'Antebraço • Preto & Vermelho', 'Composição fluida acompanhando a anatomia do braço com sombreamento suave em preto e peônias vibrantes em vermelho.', this.querySelector('img').currentSrc)">
+          <div class="work-image-box">
+            <span class="work-tag-badge">Preto & Vermelho</span>
+            <img src="bv1.jpeg" onerror="this.onerror=null; this.src='bv1.jpg';" alt="Sereia & Peônias">
+          </div>
+          <div class="work-body">
+            <div class="work-meta">
+              <span>Antebraço</span>
+              <span>#001</span>
+            </div>
+            <h3>Sereia & Peônias</h3>
+            <p>Composição fluida acompanhando a anatomia do braço com sombreamento suave em preto e peônias em vermelho.</p>
+          </div>
+        </article>
+
+        <article class="work-card" onclick="openWorkModal('Carpa & Chamas', 'Braço & Cotovelo • Preto & Vermelho', 'Movimento orgânico contornando a articulação do cotovelo com contraste intenso entre preto sólido e vermelho.', this.querySelector('img').currentSrc)">
+          <div class="work-image-box">
+            <span class="work-tag-badge">Preto & Vermelho</span>
+            <img src="bv2.jpg" onerror="this.onerror=null; this.src='bv2.jpeg';" alt="Carpa & Chamas">
+          </div>
+          <div class="work-body">
+            <div class="work-meta">
+              <span>Braço & Cotovelo</span>
+              <span>#002</span>
+            </div>
+            <h3>Carpa & Chamas</h3>
+            <p>Movimento orgânico contornando o cotovelo com contraste intenso entre preenchimento preto e detalhes em vermelho.</p>
+          </div>
+        </article>
+
+        <article class="work-card" onclick="openWorkModal('Touro & Borboleta', 'Braço & Antebraço • Blackwork', 'Composição em preto intenso unindo a força do touro com a delicadeza de uma borboleta e adaga na base do antebraço.', this.querySelector('img').currentSrc)">
+          <div class="work-image-box">
+            <span class="work-tag-badge blackwork-tag">Blackwork</span>
+            <img src="b1.jpg" onerror="this.onerror=null; this.src='b1.jpeg';" style="object-position: center 45%;" alt="Touro & Borboleta">
+          </div>
+          <div class="work-body">
+            <div class="work-meta">
+              <span>Braço & Antebraço</span>
+              <span>#004</span>
+            </div>
+            <h3>Touro & Borboleta</h3>
+            <p>Composição em preto intenso unindo a força do touro com a delicadeza da borboleta e adaga no antebraço.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- CTA FINAL -->
+      <div class="cta-banner">
+        <span class="eyebrow">AGENDAMENTOS ABERTOS</span>
+        <h2>Bora tirar sua <span>ideia</span> do papel?</h2>
+        <p>Chame direto no WhatsApp ou Instagram para conversar sobre sua tattoo e conferir a localização do estúdio.</p>
+        <div class="hero-actions" style="justify-content: center;">
+          <a href="https://wa.me/5569993120331?text=Olá%20Kathleen!%20Vim%20pelo%20site%20e%20quero%20conversar%20sobre%20uma%20tatuagem." target="_blank" class="btn btn-primary">Chamar no WhatsApp</a>
+          <button class="btn btn-secondary" onclick="switchTab('contato')">Ver Localização no Mapa</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= ABA 2: TRABALHOS ================= -->
+    <section id="trabalhos" class="view-section">
+      <div class="portfolio-header">
+        <div>
+          <span class="eyebrow">PORTFÓLIO SELECIONADO</span>
+          <h2>Galeria de <span>Trabalhos</span></h2>
+        </div>
+
+        <div class="filter-tabs">
+          <button class="filter-btn active" onclick="filterWorks('todos', this)">Todos (6)</button>
+          <button class="filter-btn" onclick="filterWorks('vermelho', this)">Preto & Vermelho (3)</button>
+          <button class="filter-btn" onclick="filterWorks('blackwork', this)">Blackwork (3)</button>
+        </div>
+      </div>
+
+      <div class="works-grid" id="full-gallery">
+        <!-- PROJETO 1: PRETO E VERMELHO -->
+        <article class="work-card" data-category="vermelho" onclick="openWorkModal('Sereia & Peônias', 'Antebraço • Preto & Vermelho', 'Composição fluida acompanhando a anatomia do braço com sombreamento suave em preto e peônias vibrantes em vermelho.', this.querySelector('img').currentSrc)">
+          <div class="work-image-box">
+            <span class="work-tag-badge">Preto & Vermelho</span>
+            <img src="bv1.jpeg" onerror="this.onerror=null; this.src='bv1.jpg';" alt="Sereia & Peônias">
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span>Antebraço</span><span>#001</span></div>
+            <h3>Sereia & Peônias</h3>
+            <p>Composição fluida acompanhando a anatomia do braço com sombreamento suave em preto e peônias em vermelho.</p>
+          </div>
+        </article>
+
+        <!-- PROJETO 2: PRETO E VERMELHO -->
+        <article class="work-card" data-category="vermelho" onclick="openWorkModal('Carpa & Chamas', 'Braço & Cotovelo • Preto & Vermelho', 'Movimento orgânico contornando a articulação do cotovelo com contraste intenso entre preto sólido e vermelho.', this.querySelector('img').currentSrc)">
+          <div class="work-image-box">
+            <span class="work-tag-badge">Preto & Vermelho</span>
+            <img src="bv2.jpg" onerror="this.onerror=null; this.src='bv2.jpeg';" alt="Carpa & Chamas">
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span>Braço & Cotovelo</span><span>#002</span></div>
+            <h3>Carpa & Chamas</h3>
+            <p>Movimento orgânico contornando o cotovelo com contraste intenso entre preenchimento preto e detalhes em vermelho.</p>
+          </div>
+        </article>
+
+        <!-- PROJETO 3: PRETO E VERMELHO -->
+        <article class="work-card" data-category="vermelho" onclick="openWorkModal('Dragão & Lírios-Aranha', 'Fechamento de Costas • Preto & Vermelho', 'Projeto de grande escala nas costas unindo dragão detalhado em preto e lírios-aranha vermelhos em movimento.', this.querySelector('img').currentSrc)">
+          <div class="work-image-box">
+            <span class="work-tag-badge">Preto & Vermelho</span>
+            <img src="bv3.jpg" onerror="this.onerror=null; this.src='bv3.jpeg';" alt="Dragão & Lírios-Aranha">
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span>Costas</span><span>#003</span></div>
+            <h3>Dragão & Lírios-Aranha</h3>
+            <p>Fechamento nas costas unindo dragão texturizado em preto e lírios vermelhos que acompanham a linha da coluna.</p>
+          </div>
+        </article>
+
+        <!-- PROJETO 4: BLACKWORK -->
+        <article class="work-card" data-category="blackwork" onclick="openWorkModal('Touro & Borboleta', 'Braço & Antebraço • Blackwork', 'Composição em preto intenso unindo a força do touro com a delicadeza de uma borboleta e adaga na base do antebraço.', this.querySelector('img').currentSrc)">
+          <div class="work-image-box">
+            <span class="work-tag-badge blackwork-tag">Blackwork</span>
+            <img src="b1.jpg" onerror="this.onerror=null; this.src='b1.jpeg';" style="object-position: center 45%;" alt="Touro & Borboleta">
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span>Braço & Antebraço</span><span>#004</span></div>
+            <h3>Touro & Borboleta</h3>
+            <p>Composição em preto intenso unindo a força do touro com a delicadeza da borboleta e adaga no antebraço.</p>
+          </div>
+        </article>
+
+        <!-- PROJETO 5: BLACKWORK -->
+        <article class="work-card" data-category="blackwork" onclick="openWorkModal('Gato Surreal', 'Panturrilha • Blackwork', 'Ilustração sombria com múltiplos olhos, traços expressivos de pelagem e sombreamento de alto contraste.', this.querySelector('img').currentSrc)">
+          <div class="work-image-box">
+            <span class="work-tag-badge blackwork-tag">Blackwork</span>
+            <img src="b2.jpg" onerror="this.onerror=null; this.src='b2.jpeg';" style="object-position: center 50%;" alt="Gato Surreal">
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span>Panturrilha</span><span>#005</span></div>
+            <h3>Gato Surreal</h3>
+            <p>Ilustração sombria com múltiplos olhos, traços expressivos de pelagem e sombreamento de alto contraste.</p>
+          </div>
+        </article>
+
+        <!-- PROJETO 6: BLACKWORK -->
+        <article class="work-card" data-category="blackwork" onclick="openWorkModal('Mariposa, Libélula & Aranha', 'Lateral da Coxa • Blackwork', 'Projeto vertical de grande escala integrando mariposa lunar, libélula, aranha e teias ornamentais.', this.querySelector('img').currentSrc)">
+          <div class="work-image-box">
+            <span class="work-tag-badge blackwork-tag">Blackwork</span>
+            <img src="b3.jpg" onerror="this.onerror=null; this.src='b3.jpeg';" style="object-position: center 40%;" alt="Mariposa, Libélula & Aranha">
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span>Lateral da Coxa</span><span>#006</span></div>
+            <h3>Mariposa, Libélula & Aranha</h3>
+            <p>Projeto vertical de grande escala integrando mariposa lunar, libélula, aranha e teias ornamentais.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= ABA 3: CONTATO & GEOLOCALIZAÇÃO ================= -->
+    <section id="contato" class="view-section">
+      <div class="contact-header">
+        <span class="eyebrow">ATENDIMENTO & LOCALIZAÇÃO</span>
+        <h1>Contato & <span>Estúdio</span></h1>
+        <p>Fale diretamente pelo WhatsApp ou Instagram e trace sua rota até o Boto Ink Tattoo Studio.</p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- COLUNA 1: WHATSAPP E INSTAGRAM -->
+        <div class="social-cards-stack">
+          <div class="direct-channel-card whatsapp-featured">
+            <div class="channel-top">
+              <div class="channel-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              </div>
+              <span class="eyebrow"><span class="eyebrow-dot"></span> RESPOSTA RÁPIDA</span>
+            </div>
+            <h3>WhatsApp Direto</h3>
+            <p>Mande suas referências, tire dúvidas sobre valores e veja os horários disponíveis na agenda.</p>
+            <a href="https://wa.me/5569993120331?text=Olá%20Kathleen!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20uma%20tattoo." target="_blank" class="btn btn-primary" style="width: 100%;">
+              Iniciar Conversa — (69) 99312-0331
+            </a>
+          </div>
+
+          <div class="direct-channel-card">
+            <div class="channel-top">
+              <div class="channel-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </div>
+              <span class="eyebrow">PORTFÓLIO & FLASHES</span>
+            </div>
+            <h3>Instagram</h3>
+            <p>Acompanhe os trabalhos mais recentes, desenhos disponíveis e novidades do dia a dia no estúdio.</p>
+            <a href="https://instagram.com/kathleenmayara.tattoo" target="_blank" class="btn btn-secondary" style="width: 100%;">
+              Abrir @kathleenmayara.tattoo ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- COLUNA 2: MAPA GOOGLE + GEOLOCALIZAÇÃO ATIVA -->
+        <div class="map-card">
+          <div class="map-card-header">
+            <span class="eyebrow">COMO CHEGAR</span>
+            <h3>Boto Ink Tattoo Studio</h3>
+            <p>Av. Calama, 5922 – Aponiã, Porto Velho - RO</p>
+          </div>
+
+          <div class="map-frame-wrapper">
+            <iframe 
+              title="Localização Boto Ink Tattoo Studio"
+              src="https://maps.google.com/maps?q=Av.%20Calama,%205922%20-%20Aponia,%20Porto%20Velho%20-%20RO&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div id="geo-status" class="geo-status">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red-vivid)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg>
+            <span id="geo-text">Localizando sua posição atual...</span>
+          </div>
+
+          <div class="map-buttons-grid">
+            <button type="button" onclick="traceLiveRoute()" class="btn btn-primary btn-geo-full">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+              Traçar Rota da Minha Localização Atual
+            </button>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=Av.+Calama,+5922+-+Aponia,+Porto+Velho+-+RO" target="_blank" class="btn btn-secondary">
+              Google Maps
+            </a>
+            <a href="https://waze.com/ul?q=Av.+Calama,+5922+-+Aponia,+Porto+Velho+-+RO&navigate=yes" target="_blank" class="btn btn-secondary">
+              Abrir no Waze
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL DE VISUALIZAÇÃO DO TRABALHO -->
+  <div id="work-modal" class="modal-overlay" onclick="closeWorkModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <span class="eyebrow" id="modal-meta">DETALHES DO TRABALHO</span>
+        <button class="modal-close" onclick="closeWorkModal()" aria-label="Fechar">&times;</button>
+      </div>
+      <img id="modal-img" class="modal-photo" src="" alt="Visualização ampliada da tatuagem">
+      <div class="modal-content">
+        <h3 id="modal-title">Título da Obra</h3>
+        <p id="modal-desc">Descrição do trabalho.</p>
+        <a id="modal-wpp-link" href="#" target="_blank" class="btn btn-primary" style="width: 100%;">
+          Quero uma tattoo nesse estilo
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <div class="footer-brand">Kathleen <span>Mayara</span> <small style="font-family: var(--font-sans); font-weight: 400; color: var(--text-muted); font-size: 0.85rem;">• Porto Velho, RO</small></div>
+        <p class="footer-sub">Boto Ink Tattoo Studio — Av. Calama, 5922, Aponiã</p>
+      </div>
+
+      <div class="footer-links">
+        <button onclick="switchTab('apresentacao')">Apresentação</button>
+        <button onclick="switchTab('trabalhos')">Trabalhos</button>
+        <button onclick="switchTab('contato')">Contato</button>
+        <a href="https://instagram.com/kathleenmayara.tattoo" target="_blank">@kathleenmayara.tattoo</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const ARTIST_WHATSAPP = '5569993120331';
+    const STUDIO_ADDRESS = 'Av. Calama, 5922 - Aponia, Porto Velho - RO';
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.view-section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+
+      document.querySelectorAll('.nav-btn, .mobile-nav-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.target === tabId);
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function filterWorks(category, btnElement) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const cards = document.querySelectorAll('#full-gallery .work-card');
+      cards.forEach(card => {
+        const cardCategories = card.dataset.category || '';
+        if (category === 'todos' || cardCategories.includes(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openWorkModal(title, meta, description, imageSrc) {
+      document.getElementById('modal-title').innerText = title;
+      document.getElementById('modal-meta').innerText = meta;
+      document.getElementById('modal-desc').innerText = description;
+
+      const modalImg = document.getElementById('modal-img');
+      if (imageSrc) {
+        modalImg.src = imageSrc;
+        modalImg.style.display = 'block';
+      } else {
+        modalImg.style.display = 'none';
+      }
+
+      const msg = `Olá Kathleen! Vi o trabalho "${title}" no seu site e gostaria de fazer algo nessa pegada.`;
+      document.getElementById('modal-wpp-link').href = `https://wa.me/${ARTIST_WHATSAPP}?text=${encodeURIComponent(msg)}`;
+
+      document.getElementById('work-modal').classList.add('open');
+    }
+
+    function closeWorkModal() {
+      document.getElementById('work-modal').classList.remove('open');
+    }
+
+    function traceLiveRoute() {
+      const statusBox = document.getElementById('geo-status');
+      const statusText = document.getElementById('geo-text');
+      const destination = encodeURIComponent(STUDIO_ADDRESS);
+
+      statusBox.classList.add('visible');
+      statusText.innerText = 'Obtendo sua localização atual...';
+
+      if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            statusText.innerText = 'Localização encontrada! Abrindo rota no Google Maps...';
+            const routeUrl = `https://www.google.com/maps/dir/?api=1&origin=${latitude},${longitude}&destination=${destination}&travelmode=driving`;
+            window.open(routeUrl, '_blank');
+          },
+          () => {
+            statusText.innerText = 'Abrindo rota no Google Maps para o endereço do estúdio...';
+            const fallbackUrl = `https://www.google.com/maps/dir/?api=1&destination=${destination}`;
+            window.open(fallbackUrl, '_blank');
+          },
+          { timeout: 7000 }
+        );
+      } else {
+        statusText.innerText = 'Abrindo Google Maps...';
+        window.open(`https://www.google.com/maps/dir/?api=1&destination=${destination}`, '_blank');
+      }
+    }
+  </script>
+</body>
+</html>
